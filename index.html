@@ -221,8 +221,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <p class="desc">The complete, systematic guide from first sounds to full fluency. Everything you need in one place — no extras required.</p>
         <hr>
         <div class="pay-form">
-          <input type="email" id="email-book" placeholder="Your email address">
-          <button class="pay-btn" onclick="pay('book', 500000, 'email-book', 'The Reading Blueprint (Book)')">Buy the Book — ₦5,000</button>
+          <input type="tel" id="phone-book" placeholder="Your WhatsApp number e.g. 08012345678">
+          <button class="pay-btn" onclick="pay('book', 500000, 'phone-book', 'The Reading Blueprint (Book)')">Buy the Book — ₦5,000</button>
           <p class="pay-secure">🔒 Secured by Paystack</p>
         </div>
       </div>
@@ -236,8 +236,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <p class="desc">Direct, personal coaching with the instructor. Laser-focused on real progress — for you, your child, or your teaching staff. No wasted time.</p>
         <hr>
         <div class="pay-form">
-          <input type="email" id="email-1on1" placeholder="Your email address">
-          <button class="pay-btn" onclick="pay('1on1', 7500000, 'email-1on1', '1-on-1 Training Session')">Enrol — ₦75,000/month</button>
+          <input type="tel" id="phone-1on1" placeholder="Your WhatsApp number e.g. 08012345678">
+          <button class="pay-btn" onclick="pay('1on1', 7500000, 'phone-1on1', '1-on-1 Training Session')">Enrol — ₦75,000/month</button>
           <p class="pay-secure">🔒 Secured by Paystack</p>
         </div>
       </div>
@@ -250,8 +250,8 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <p class="desc">The full reading system delivered session by session. Structured, progressive, and budget-friendly. This is the option that builds lasting transformation.</p>
         <hr>
         <div class="pay-form">
-          <input type="email" id="email-pkg" placeholder="Your email address">
-          <button class="pay-btn" onclick="pay('pkg', 1500000, 'email-pkg', '5–10 Session Package')">Enrol — ₦15,000/month</button>
+          <input type="tel" id="phone-pkg" placeholder="Your WhatsApp number e.g. 08012345678">
+          <button class="pay-btn" onclick="pay('pkg', 1500000, 'phone-pkg', '5–10 Session Package')">Enrol — ₦15,000/month</button>
           <p class="pay-secure">🔒 Secured by Paystack</p>
         </div>
       </div>
@@ -322,35 +322,40 @@ function loadVideo(){
   wrap.appendChild(iframe);
 }
 
-function showToast(msg){
-  var t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(function(){ t.classList.remove('show'); }, 5000);
+var WHATSAPP_LINK = 'https://wa.link/eew3pk';
+
+function formatPhone(phone){
+  var clean = phone.replace(/\D/g,'');
+  if(clean.startsWith('0')) clean = '234' + clean.slice(1);
+  if(!clean.startsWith('234')) clean = '234' + clean;
+  return '+' + clean;
 }
 
-function pay(product, amount, emailFieldId, label){
-  var email = document.getElementById(emailFieldId).value.trim();
-  if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-    alert('Please enter a valid email address to continue.');
-    document.getElementById(emailFieldId).focus();
+function pay(product, amount, phoneFieldId, label){
+  var phone = document.getElementById(phoneFieldId).value.trim();
+  if(!phone || phone.replace(/\D/g,'').length < 10){
+    alert('Please enter a valid WhatsApp phone number to continue.');
+    document.getElementById(phoneFieldId).focus();
     return;
   }
+  var intlPhone = formatPhone(phone);
+  var paystackEmail = intlPhone.replace('+','') + '@readingblueprint.customer';
   var paystackInstance = new PaystackPop();
   paystackInstance.newTransaction({
     key: PAYSTACK_KEY,
-    email: email,
+    email: paystackEmail,
     amount: amount,
     currency: 'NGN',
     label: label,
     ref: 'TRB-' + product.toUpperCase() + '-' + Date.now(),
     metadata:{
       custom_fields:[
-        {display_name:'Product',variable_name:'product',value:label}
+        {display_name:'Product',variable_name:'product',value:label},
+        {display_name:'WhatsApp Number',variable_name:'whatsapp',value:intlPhone}
       ]
     },
     onSuccess: function(transaction){
-      showToast('Payment successful! Ref: ' + transaction.reference + ' — Check your email for next steps.');
+      window.location.href = WHATSAPP_LINK;
     },
     onCancel: function(){}
   });
