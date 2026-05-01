@@ -1,6 +1,12 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reading Blueprint — Full Fluency Starts Here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --navy:#0B1526;--navy2:#111E35;--navy3:#172544;
@@ -10,162 +16,178 @@
   --sans:'DM Sans',system-ui,sans-serif;
 }
 body{background:var(--navy);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.7;overflow-x:hidden}
-.w{max-width:760px;margin:0 auto;padding:0 24px}
-.eyebrow{font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-h2{font-family:var(--serif);font-size:clamp(24px,3.5vw,34px);color:var(--cream);line-height:1.2;margin-bottom:16px}
+.w{max-width:960px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
+h2{font-family:var(--serif);font-size:clamp(26px,3.5vw,36px);color:var(--cream);line-height:1.2;margin-bottom:16px}
 h2 em{font-style:italic;color:var(--gold2)}
 p{color:var(--muted);margin-bottom:14px}
 p:last-child{margin-bottom:0}
 p strong{color:var(--text);font-weight:500}
 
 /* HERO */
-.hero{background:linear-gradient(160deg,#0e1e3a 0%,#0b1526 70%);padding:60px 24px 48px;text-align:center;border-bottom:1px solid rgba(201,168,76,.15);position:relative}
-.hero::before{content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:500px;height:260px;background:radial-gradient(ellipse,rgba(201,168,76,.06) 0%,transparent 70%);pointer-events:none}
-.hero h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,48px);font-weight:700;color:var(--cream);line-height:1.15;margin-bottom:16px}
+.hero{background:linear-gradient(160deg,#0e1e3a 0%,#0b1526 70%);padding:80px 24px 60px;text-align:center;border-bottom:1px solid rgba(201,168,76,.15);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(201,168,76,.07) 0%,transparent 70%);pointer-events:none}
+.hero h1{font-family:var(--serif);font-size:clamp(32px,5vw,54px);font-weight:700;color:var(--cream);line-height:1.12;margin-bottom:18px}
 .hero h1 em{font-style:italic;color:var(--gold2)}
-.hero .sub{font-size:16px;font-weight:300;color:var(--muted);max-width:520px;margin:0 auto 28px}
-.cta-main{display:inline-block;background:var(--gold);color:var(--navy);font-size:15px;font-weight:500;padding:13px 32px;border-radius:3px;text-decoration:none;letter-spacing:.04em;cursor:pointer;border:none;font-family:var(--sans)}
+.hero .sub{font-size:17px;font-weight:300;color:var(--muted);max-width:540px;margin:0 auto 32px}
+.cta-main{display:inline-block;background:var(--gold);color:var(--navy);font-size:15px;font-weight:500;padding:14px 36px;border-radius:3px;text-decoration:none;letter-spacing:.04em;cursor:pointer;border:none;font-family:var(--sans);transition:background .2s}
 .cta-main:hover{background:var(--gold2)}
+.hero-stats{margin-top:48px;display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap;border-top:1px solid rgba(201,168,76,.12);padding-top:36px}
+.stat{text-align:center}
+.stat strong{display:block;font-family:var(--serif);font-size:22px;color:var(--cream)}
+.stat span{font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.hdivider{width:1px;height:36px;background:rgba(201,168,76,.2)}
 
-/* VIDEO SECTION */
-.video-section{padding:56px 24px;background:var(--navy2);border-bottom:1px solid rgba(201,168,76,.1)}
-.video-label{text-align:center;margin-bottom:24px}
-.video-label p.eyebrow{display:block}
-.video-label h2{margin-bottom:8px}
-.video-label .sub-small{font-size:14px;color:var(--muted);margin-bottom:0}
-.video-wrap{position:relative;padding-bottom:56.25%;height:0;border-radius:6px;overflow:hidden;border:1px solid rgba(201,168,76,.18);background:#0a101e}
+/* VIDEO */
+.video-section{padding:64px 24px;background:var(--navy2);border-bottom:1px solid rgba(201,168,76,.1)}
+.section-header{text-align:center;margin-bottom:28px}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;border-radius:6px;overflow:hidden;border:1px solid rgba(201,168,76,.2);background:#090f1c;max-width:800px;margin:0 auto}
 .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
-.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;cursor:pointer}
-.play-btn{width:64px;height:64px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
+.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;cursor:pointer;background:rgba(9,15,28,.85)}
+.play-btn{width:70px;height:70px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
 .play-btn:hover{background:var(--gold2);transform:scale(1.08)}
-.play-btn svg{margin-left:4px}
-.video-placeholder p{font-size:13px;color:var(--muted);font-style:italic}
-.video-note{margin-top:14px;text-align:center;font-size:13px;color:var(--muted);font-style:italic}
+.video-placeholder p{font-size:14px;color:var(--muted);font-style:italic}
+.video-note{text-align:center;font-size:12px;color:var(--muted);font-style:italic;margin-top:14px}
 
 /* PAIN */
-.pain{padding:60px 24px;border-bottom:1px solid rgba(201,168,76,.08)}
-.pain-quote{border-left:3px solid var(--gold);padding-left:20px;margin:28px 0;font-family:var(--serif);font-size:19px;font-style:italic;color:var(--cream);line-height:1.5}
+.pain{padding:64px 24px;border-bottom:1px solid rgba(201,168,76,.08)}
+.pain-quote{border-left:3px solid var(--gold);padding-left:22px;margin:28px 0;font-family:var(--serif);font-size:20px;font-style:italic;color:var(--cream);line-height:1.5}
 
 /* PHASES */
-.phases-section{padding:60px 24px;background:var(--navy2);border-bottom:1px solid rgba(201,168,76,.08)}
-.phases{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
-@media(max-width:520px){.phases{grid-template-columns:1fr}}
-.phase{background:var(--navy3);border:1px solid rgba(201,168,76,.12);border-radius:4px;padding:20px}
-.phase-num{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.phase h3{font-family:var(--serif);font-size:17px;color:var(--cream);margin-bottom:8px}
-.phase p{font-size:13px;color:var(--muted);margin:0}
+.phases-section{padding:64px 24px;background:var(--navy2);border-bottom:1px solid rgba(201,168,76,.08)}
+.phases{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+@media(max-width:580px){.phases{grid-template-columns:1fr}}
+.phase{background:var(--navy3);border:1px solid rgba(201,168,76,.12);border-radius:4px;padding:24px}
+.phase-num{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+.phase h3{font-family:var(--serif);font-size:18px;color:var(--cream);margin-bottom:8px}
+.phase p{font-size:14px;color:var(--muted);margin:0}
 
 /* METHOD */
-.method-section{padding:60px 24px;border-bottom:1px solid rgba(201,168,76,.08)}
-.methods{display:grid;gap:16px;margin-top:28px}
-.method{display:flex;gap:18px;align-items:flex-start;background:var(--navy3);border:1px solid rgba(201,168,76,.1);border-radius:4px;padding:20px}
-.method-badge{flex-shrink:0;width:40px;height:40px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--gold2)}
-.method h3{font-family:var(--serif);font-size:16px;color:var(--cream);margin-bottom:4px}
-.method p{font-size:13px;color:var(--muted);margin:0}
+.method-section{padding:64px 24px;border-bottom:1px solid rgba(201,168,76,.08)}
+.methods{display:grid;gap:18px;margin-top:32px}
+.method{display:flex;gap:20px;align-items:flex-start;background:var(--navy3);border:1px solid rgba(201,168,76,.1);border-radius:4px;padding:22px}
+.method-badge{flex-shrink:0;width:42px;height:42px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--gold2)}
+.method h3{font-family:var(--serif);font-size:17px;color:var(--cream);margin-bottom:6px}
+.method p{font-size:14px;color:var(--muted);margin:0}
 
-/* PRICING / PAYMENT */
-.pricing-section{padding:60px 24px;background:var(--navy2);border-bottom:1px solid rgba(201,168,76,.1)}
-.pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:32px}
-@media(max-width:620px){.pricing-grid{grid-template-columns:1fr}}
-.pcard{background:var(--navy3);border:1px solid rgba(201,168,76,.14);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px}
-.pcard.featured{border:1.5px solid var(--gold);position:relative}
-.badge-featured{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 12px;border-radius:20px;white-space:nowrap}
+/* PRICING */
+.pricing-section{padding:64px 24px;background:var(--navy2);border-bottom:1px solid rgba(201,168,76,.1)}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:36px}
+@media(max-width:680px){.pricing-grid{grid-template-columns:1fr}}
+.pcard{background:var(--navy3);border:1px solid rgba(201,168,76,.14);border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:14px;position:relative}
+.pcard.featured{border:1.5px solid var(--gold)}
+.badge-featured{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:3px 14px;border-radius:20px;white-space:nowrap}
 .pcard-type{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.pcard h3{font-family:var(--serif);font-size:17px;color:var(--cream);line-height:1.3}
-.pcard .price{font-family:var(--serif);font-size:22px;color:var(--gold2);font-weight:700}
+.pcard h3{font-family:var(--serif);font-size:18px;color:var(--cream);line-height:1.3}
+.pcard .price{font-family:var(--serif);font-size:24px;color:var(--gold2);font-weight:700}
 .pcard .price span{font-size:13px;font-weight:400;color:var(--muted)}
-.pcard p{font-size:13px;color:var(--muted);margin:0;flex:1}
-.pcard-divider{border:none;border-top:1px solid rgba(201,168,76,.1);margin:4px 0}
-
-/* PAYMENT FORM inside card */
-.pay-form{display:flex;flex-direction:column;gap:8px;margin-top:4px}
-.pay-form input{background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);border-radius:3px;color:var(--cream);font-size:13px;padding:9px 12px;font-family:var(--sans);outline:none;width:100%}
+.pcard .desc{font-size:13px;color:var(--muted);flex:1}
+.pcard hr{border:none;border-top:1px solid rgba(201,168,76,.1)}
+.pay-form{display:flex;flex-direction:column;gap:10px}
+.pay-form input{background:rgba(255,255,255,.05);border:1px solid rgba(201,168,76,.2);border-radius:3px;color:var(--cream);font-size:13px;padding:10px 12px;font-family:var(--sans);outline:none;width:100%}
 .pay-form input::placeholder{color:var(--muted)}
 .pay-form input:focus{border-color:rgba(201,168,76,.5)}
-.pay-btn{background:var(--gold);color:var(--navy);font-size:13px;font-weight:500;padding:10px;border-radius:3px;border:none;cursor:pointer;font-family:var(--sans);letter-spacing:.03em;transition:background .2s;width:100%}
+.pay-btn{background:var(--gold);color:var(--navy);font-size:13px;font-weight:500;padding:11px;border-radius:3px;border:none;cursor:pointer;font-family:var(--sans);letter-spacing:.03em;transition:background .2s;width:100%}
 .pay-btn:hover{background:var(--gold2)}
-.pay-secure{font-size:11px;color:var(--muted);text-align:center;display:flex;align-items:center;justify-content:center;gap:4px}
+.pay-secure{font-size:11px;color:var(--muted);text-align:center}
+.pricing-note{text-align:center;font-size:12px;color:var(--muted);margin-top:20px}
 
 /* AUDIENCE */
-.audience-section{padding:60px 24px;border-bottom:1px solid rgba(201,168,76,.08)}
-.audience{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
-@media(max-width:520px){.audience{grid-template-columns:1fr}}
-.aud{text-align:center;padding:24px 14px;border:1px solid rgba(201,168,76,.1);border-radius:4px}
-.aud-icon{display:block;font-size:24px;margin-bottom:10px;color:var(--gold2)}
-.aud h3{font-family:var(--serif);font-size:15px;color:var(--cream);margin-bottom:6px}
+.audience-section{padding:64px 24px;border-bottom:1px solid rgba(201,168,76,.08)}
+.audience{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+@media(max-width:580px){.audience{grid-template-columns:1fr}}
+.aud{text-align:center;padding:28px 16px;border:1px solid rgba(201,168,76,.1);border-radius:4px}
+.aud-icon{display:block;font-size:26px;margin-bottom:12px;color:var(--gold2)}
+.aud h3{font-family:var(--serif);font-size:16px;color:var(--cream);margin-bottom:8px}
 .aud p{font-size:13px;color:var(--muted);margin:0}
 
 /* AUTHOR */
-.author-section{padding:60px 24px;background:var(--navy2)}
-.author-block{display:flex;gap:24px;align-items:flex-start;margin-top:24px}
-@media(max-width:480px){.author-block{flex-direction:column}}
-.author-avatar{flex-shrink:0;width:64px;height:64px;border-radius:50%;background:rgba(201,168,76,.1);border:2px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;color:var(--gold2)}
-.author-text h3{font-family:var(--serif);font-size:17px;color:var(--cream);margin-bottom:6px}
-.author-text p{font-size:14px;color:var(--muted);margin-bottom:8px}
+.author-section{padding:64px 24px;background:var(--navy2)}
+.author-block{display:flex;gap:28px;align-items:flex-start;margin-top:28px}
+@media(max-width:520px){.author-block{flex-direction:column}}
+.author-avatar{flex-shrink:0;width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,.1);border:2px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;color:var(--gold2)}
+.author-text h3{font-family:var(--serif);font-size:19px;color:var(--cream);margin-bottom:8px}
+.author-text p{font-size:15px;color:var(--muted);margin-bottom:10px}
 
 /* FINAL CTA */
-.final-cta{text-align:center;padding:64px 24px;border-top:1px solid rgba(201,168,76,.12)}
-.final-cta p{max-width:460px;margin:0 auto 28px}
+.final-cta{text-align:center;padding:80px 24px;border-top:1px solid rgba(201,168,76,.12);background:linear-gradient(160deg,#0e1e3a,#0b1526)}
+.final-cta p.sub{max-width:480px;margin:0 auto 32px}
 
-footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:20px;text-align:center;font-size:12px;color:var(--muted)}
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:24px;text-align:center;font-size:12px;color:var(--muted)}
+
+/* SUCCESS TOAST */
+.toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(100px);background:#1a3a1a;border:1px solid #2a6a2a;color:#7adb7a;padding:14px 28px;border-radius:4px;font-size:14px;font-family:var(--sans);z-index:9999;transition:transform .4s ease;white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0)}
 </style>
+</head>
+<body>
 
+<!-- PAYSTACK -->
 <script src="https://js.paystack.co/v2/inline.js"></script>
 
-<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">The Reading Blueprint landing page with video and Paystack payment</h2>
-
 <!-- HERO -->
-<div class="hero">
+<section class="hero">
   <div class="w">
-    <p class="eyebrow">The Science of Reading — Systematized</p>
+    <span class="eyebrow">The Science of Reading — Systematized</span>
     <h1>The Path to <em>Full Fluency</em><br>Has Always Been a System.</h1>
-    <p class="sub">A real, step-by-step programme built on decades of science — not shortcuts, not tricks. Just a clear, proven code that anyone can learn to read.</p>
+    <p class="sub">A real, step-by-step programme built on decades of science — not shortcuts, not tricks. A clear, proven code that anyone can learn to read.</p>
     <button class="cta-main" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Start Your Journey to Fluency</button>
+    <div class="hero-stats">
+      <div class="stat"><strong>4 Phases</strong><span>Complete Architecture</span></div>
+      <div class="hdivider"></div>
+      <div class="stat"><strong>Science-Based</strong><span>Explicit Phonics</span></div>
+      <div class="hdivider"></div>
+      <div class="stat"><strong>Every Learner</strong><span>Children &amp; Adults</span></div>
+      <div class="hdivider"></div>
+      <div class="stat"><strong>Nigeria</strong><span>Local Payments</span></div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- VIDEO SECTION -->
-<div class="video-section">
+<!-- VIDEO -->
+<section class="video-section">
   <div class="w">
-    <div class="video-label">
-      <p class="eyebrow">See It In Action</p>
+    <div class="section-header">
+      <span class="eyebrow">See It In Action</span>
       <h2>Watch a Sample <em>Lesson</em></h2>
-      <p class="sub-small">See exactly how the system works — controlled blending, step-by-step decoding, and the methodology behind the book.</p>
+      <p style="max-width:480px;margin:0 auto">See exactly how the system works — controlled blending, step-by-step decoding, the methodology behind the book.</p>
     </div>
     <div class="video-wrap" id="videoWrap">
       <div class="video-placeholder" id="videoPlaceholder" onclick="loadVideo()">
         <div class="play-btn">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 3.5L17 10L5 16.5V3.5Z" fill="#0B1526"/></svg>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M6 4L18 11L6 18V4Z" fill="#0B1526"/></svg>
         </div>
         <p>Click to watch the sample lesson</p>
       </div>
     </div>
-    <p class="video-note">Replace the video embed URL below with your actual YouTube or Vimeo link.</p>
+    <!-- ↓ Replace YOUR_YOUTUBE_VIDEO_ID with your actual YouTube video ID -->
+    <p class="video-note">Sample lesson demonstrating controlled blending and phonics methodology</p>
   </div>
-</div>
+</section>
 
 <!-- PAIN -->
 <section class="pain">
   <div class="w">
-    <p class="eyebrow">The Problem</p>
+    <span class="eyebrow">The Problem</span>
     <h2>You've Tried <em>Tricks</em>.<br>They Didn't Work. Here's Why.</h2>
     <div class="pain-quote">"Guess the word from the picture." "Sound it out — sort of." "It'll click eventually."</div>
-    <p>These aren't systems. They're guesses dressed up as methods. Functional illiteracy is not a failure of intelligence — it is the silent consequence of being handed a map with half the roads missing.</p>
+    <p>These aren't systems. They're guesses dressed up as methods — and millions of people are paying the price. Functional illiteracy is not a failure of intelligence. It is the silent consequence of being handed a map with half the roads missing.</p>
     <p><strong>Reading is a code.</strong> Like any code, it can be broken down, taught step by step, and mastered by anyone — but only if someone teaches the actual code, not a shortcut around it.</p>
+    <p>Silent exclusion happens one unread form, one skipped opportunity, one misunderstood message at a time. <strong>The Reading Blueprint exists to end that.</strong></p>
   </div>
 </section>
 
 <!-- PHASES -->
 <section class="phases-section">
   <div class="w">
-    <p class="eyebrow">The Programme</p>
+    <span class="eyebrow">The Programme</span>
     <h2>Four Phases. One <em>Complete Journey</em>.</h2>
     <p>Every skill builds on the last. Nothing is introduced before the learner is ready.</p>
     <div class="phases">
-      <div class="phase"><p class="phase-num">Phase 01</p><h3>Sound Foundations</h3><p>Alphabet, individual sounds, vowels, and fundamental patterns — no gaps, no assumptions.</p></div>
-      <div class="phase"><p class="phase-num">Phase 02</p><h3>Cracking the Code</h3><p>Consonant blends, digraphs, and the six syllable types that govern English word structure.</p></div>
-      <div class="phase"><p class="phase-num">Phase 03</p><h3>Architecture of Meaning</h3><p>Sentence structure, punctuation, and the foundations of reading with real purpose.</p></div>
-      <div class="phase"><p class="phase-num">Phase 04</p><h3>Achieving Fluency</h3><p>Speed, expression, phrasing, and deep comprehension — the marks of a confident reader.</p></div>
+      <div class="phase"><span class="phase-num">Phase 01</span><h3>Sound Foundations</h3><p>Alphabet, individual sounds, vowels, and fundamental patterns — no gaps, no assumptions.</p></div>
+      <div class="phase"><span class="phase-num">Phase 02</span><h3>Cracking the Code</h3><p>Consonant blends, digraphs, and the six syllable types that govern English word structure.</p></div>
+      <div class="phase"><span class="phase-num">Phase 03</span><h3>Architecture of Meaning</h3><p>Sentence structure, punctuation, and the foundations of reading with real purpose.</p></div>
+      <div class="phase"><span class="phase-num">Phase 04</span><h3>Achieving Fluency</h3><p>Speed, expression, phrasing, and deep comprehension — the marks of a confident reader.</p></div>
     </div>
   </div>
 </section>
@@ -173,12 +195,12 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 <!-- METHOD -->
 <section class="method-section">
   <div class="w">
-    <p class="eyebrow">The Method</p>
+    <span class="eyebrow">The Method</span>
     <h2>Why This Works When <em>Others Don't</em></h2>
     <div class="methods">
       <div class="method"><div class="method-badge">⟶</div><div><h3>Controlled Blending</h3><p>Every word decoded one sound at a time — left to right, no guessing. Builds the neural pathway that makes fluent reading automatic.</p></div></div>
       <div class="method"><div class="method-badge">◉</div><div><h3>The Chin Test</h3><p>A physical technique for counting syllables. Your own body becomes a reliable learning tool — no abstract rules to memorise.</p></div></div>
-      <div class="method"><div class="method-badge">✓</div><div><h3>Controlled Texts</h3><p>Practice passages use only words containing sounds already taught. Every exercise is designed to be completed successfully.</p></div></div>
+      <div class="method"><div class="method-badge">✓</div><div><h3>Controlled Texts</h3><p>Practice passages use only words containing sounds already taught. Every exercise is designed to be completed successfully — building confidence alongside competence.</p></div></div>
     </div>
   </div>
 </section>
@@ -186,7 +208,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 <!-- PRICING + PAYSTACK -->
 <section class="pricing-section" id="pricing">
   <div class="w">
-    <p class="eyebrow">Get Started Today</p>
+    <span class="eyebrow">Get Started Today</span>
     <h2>Choose Your <em>Path to Fluency</em></h2>
     <p>The book gives you the complete system. The training options give you guided, personal support from the author himself.</p>
     <div class="pricing-grid">
@@ -196,11 +218,11 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <p class="pcard-type">The Book</p>
         <h3>The Reading Blueprint</h3>
         <div class="price">₦5,000 <span>one-time</span></div>
-        <p>The complete, systematic guide from first sounds to full fluency. Everything you need in one place.</p>
-        <hr class="pcard-divider">
+        <p class="desc">The complete, systematic guide from first sounds to full fluency. Everything you need in one place — no extras required.</p>
+        <hr>
         <div class="pay-form">
           <input type="email" id="email-book" placeholder="Your email address">
-          <button class="pay-btn" onclick="pay('book', 500000, 'email-book')">Buy the Book — ₦5,000</button>
+          <button class="pay-btn" onclick="pay('book', 500000, 'email-book', 'The Reading Blueprint (Book)')">Buy the Book — ₦5,000</button>
           <p class="pay-secure">🔒 Secured by Paystack</p>
         </div>
       </div>
@@ -211,43 +233,43 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <p class="pcard-type">1-on-1 Training</p>
         <h3>Personal Coaching Session</h3>
         <div class="price">₦75,000 <span>/month</span></div>
-        <p>Direct, personal coaching with the instructor. Laser-focused on real progress — for you, your child, or your staff.</p>
-        <hr class="pcard-divider">
+        <p class="desc">Direct, personal coaching with the instructor. Laser-focused on real progress — for you, your child, or your teaching staff. No wasted time.</p>
+        <hr>
         <div class="pay-form">
           <input type="email" id="email-1on1" placeholder="Your email address">
-          <button class="pay-btn" onclick="pay('1on1', 7500000, 'email-1on1')">Enrol — ₦75,000/mo</button>
+          <button class="pay-btn" onclick="pay('1on1', 7500000, 'email-1on1', '1-on-1 Training Session')">Enrol — ₦75,000/month</button>
           <p class="pay-secure">🔒 Secured by Paystack</p>
         </div>
       </div>
 
-      <!-- GROUP PACKAGE -->
+      <!-- SESSION PACKAGE -->
       <div class="pcard">
         <p class="pcard-type">Session Package</p>
         <h3>5–10 Session Programme</h3>
         <div class="price">₦15,000 <span>/month</span></div>
-        <p>The full reading system delivered session by session. Structured, progressive, and budget-friendly for lasting transformation.</p>
-        <hr class="pcard-divider">
+        <p class="desc">The full reading system delivered session by session. Structured, progressive, and budget-friendly. This is the option that builds lasting transformation.</p>
+        <hr>
         <div class="pay-form">
           <input type="email" id="email-pkg" placeholder="Your email address">
-          <button class="pay-btn" onclick="pay('pkg', 1500000, 'email-pkg')">Enrol — ₦15,000/mo</button>
+          <button class="pay-btn" onclick="pay('pkg', 1500000, 'email-pkg', '5–10 Session Package')">Enrol — ₦15,000/month</button>
           <p class="pay-secure">🔒 Secured by Paystack</p>
         </div>
       </div>
 
     </div>
-    <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:20px">Payments processed securely via Paystack. All major cards & bank transfers accepted.</p>
+    <p class="pricing-note">Payments processed securely via Paystack · All major cards &amp; bank transfers accepted</p>
   </div>
 </section>
 
 <!-- AUDIENCE -->
 <section class="audience-section">
   <div class="w">
-    <p class="eyebrow">Who It's For</p>
+    <span class="eyebrow">Who It's For</span>
     <h2>This Book Was Written <em>For You</em>.</h2>
     <div class="audience">
       <div class="aud"><span class="aud-icon">○</span><h3>Adult Learners</h3><p>Reading is not a talent you were born without. It's a skill you were never properly taught. This book gives you that teaching.</p></div>
-      <div class="aud"><span class="aud-icon">◌</span><h3>Parents & Caregivers</h3><p>Give your child a foundation that lasts a lifetime. Clear, structured, and free of jargon — teach with confidence from day one.</p></div>
-      <div class="aud"><span class="aud-icon">◎</span><h3>Teachers & Educators</h3><p>One complete, reliable resource from first sounds to full fluency. No piecing together multiple programmes. Just a system that works.</p></div>
+      <div class="aud"><span class="aud-icon">◌</span><h3>Parents &amp; Caregivers</h3><p>Give your child a foundation that lasts a lifetime. Clear, structured, and free of jargon — teach with confidence from day one.</p></div>
+      <div class="aud"><span class="aud-icon">◎</span><h3>Teachers &amp; Educators</h3><p>One complete, reliable resource from first sounds to full fluency. No piecing together multiple programmes. Just a system that works.</p></div>
     </div>
   </div>
 </section>
@@ -255,7 +277,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 <!-- AUTHOR -->
 <section class="author-section">
   <div class="w">
-    <p class="eyebrow">The Author</p>
+    <span class="eyebrow">The Author</span>
     <h2>About <em>Abdul-Akeem Smart</em></h2>
     <div class="author-block">
       <div class="author-avatar">AS</div>
@@ -269,64 +291,71 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 </section>
 
 <!-- FINAL CTA -->
-<div class="final-cta">
+<section class="final-cta">
   <div class="w">
-    <p class="eyebrow">Begin Today</p>
+    <span class="eyebrow">Begin Today</span>
     <h2>Your Fluency Is a <em>System Away</em>.</h2>
-    <p>The code is learnable. The path is clear. The only step left is yours.</p>
+    <p class="sub">The code is learnable. The path is clear. The only step left is yours.</p>
     <button class="cta-main" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Start Your Journey to Fluency</button>
   </div>
-</div>
+</section>
 
 <footer>
-  <p>© 2025 Abdul-Akeem Smart · <em>The Reading Blueprint</em> · Payments by Paystack</p>
+  <p>© 2025 Abdul-Akeem Smart · <em>The Reading Blueprint</em> · Payments secured by Paystack</p>
 </footer>
 
+<!-- SUCCESS TOAST -->
+<div class="toast" id="toast"></div>
+
 <script>
+var PAYSTACK_KEY = 'pk_test_56ae83c255f31e2386b25e95ca69c28f32960855';
+
 function loadVideo(){
   var wrap = document.getElementById('videoWrap');
-  var placeholder = document.getElementById('videoPlaceholder');
-  placeholder.style.display = 'none';
+  document.getElementById('videoPlaceholder').style.display = 'none';
   var iframe = document.createElement('iframe');
-  // ↓ Replace this URL with your actual YouTube embed URL
-  iframe.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0';
+  // ↓ Replace YOUR_YOUTUBE_VIDEO_ID with your actual YouTube video ID
+  iframe.src = 'https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID?autoplay=1&rel=0';
   iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
   iframe.allowFullscreen = true;
   iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none';
   wrap.appendChild(iframe);
 }
 
-function pay(product, amount, emailFieldId){
+function showToast(msg){
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 5000);
+}
+
+function pay(product, amount, emailFieldId, label){
   var email = document.getElementById(emailFieldId).value.trim();
   if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
     alert('Please enter a valid email address to continue.');
     document.getElementById(emailFieldId).focus();
     return;
   }
-  var labels = {
-    book: 'The Reading Blueprint (Book)',
-    '1on1': '1-on-1 Training Session — Monthly',
-    pkg: '5–10 Session Package — Monthly'
-  };
   var paystackInstance = new PaystackPop();
   paystackInstance.newTransaction({
-    key: 'YOUR_PAYSTACK_PUBLIC_KEY_HERE', // ← Replace with your Paystack public key
+    key: PAYSTACK_KEY,
     email: email,
     amount: amount,
     currency: 'NGN',
-    label: labels[product],
+    label: label,
     ref: 'TRB-' + product.toUpperCase() + '-' + Date.now(),
     metadata:{
       custom_fields:[
-        {display_name:'Product',variable_name:'product',value:labels[product]}
+        {display_name:'Product',variable_name:'product',value:label}
       ]
     },
     onSuccess: function(transaction){
-      alert('Payment successful! Reference: ' + transaction.reference + '\n\nThank you — check your email for next steps.');
+      showToast('Payment successful! Ref: ' + transaction.reference + ' — Check your email for next steps.');
     },
-    onCancel: function(){
-      // User closed the popup — no action needed
-    }
+    onCancel: function(){}
   });
 }
 </script>
+
+</body>
+</html>
