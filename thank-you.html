@@ -1,0 +1,135 @@
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2095695031249053');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=2095695031249053&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1526;--navy2:#111E35;--navy3:#172544;
+  --gold:#C9A84C;--gold2:#E8C97A;--cream:#F4EFE4;
+  --muted:#8A99B0;--text:#D6DDE8;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+body{background:var(--navy);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.7;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;}
+.card{background:var(--navy2);border:1px solid rgba(201,168,76,.2);border-radius:8px;max-width:520px;width:100%;padding:48px 40px;text-align:center;}
+@media(max-width:520px){.card{padding:36px 24px;}}
+.checkmark{width:72px;height:72px;background:rgba(201,168,76,.1);border:2px solid rgba(201,168,76,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px;}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+h1{font-family:var(--serif);font-size:clamp(24px,4vw,32px);color:var(--cream);line-height:1.2;margin-bottom:16px;}
+h1 em{font-style:italic;color:var(--gold2);}
+.tx-box{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);border-radius:4px;padding:14px 18px;margin:20px 0;text-align:left;}
+.tx-label{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.tx-value{font-size:14px;color:var(--cream);font-weight:500;word-break:break-all;}
+.divider{border:none;border-top:1px solid rgba(201,168,76,.1);margin:28px 0;}
+.steps{text-align:left;display:flex;flex-direction:column;gap:16px;margin-bottom:28px;}
+.step{display:flex;gap:14px;align-items:flex-start;}
+.step-num{flex-shrink:0;width:28px;height:28px;background:var(--gold);color:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:var(--sans);margin-top:2px;}
+.step-text h3{font-size:14px;font-weight:600;color:var(--cream);margin-bottom:2px;}
+.step-text p{font-size:13px;color:var(--muted);margin:0;line-height:1.6;}
+.wa-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px 24px;background:#25D366;color:#fff;font-size:15px;font-weight:600;border-radius:6px;text-decoration:none;transition:background .2s;font-family:var(--sans);letter-spacing:.02em;}
+.wa-btn:hover{background:#1ebe5d;}
+.wa-btn svg{flex-shrink:0;}
+.note{font-size:12px;color:var(--muted);margin-top:16px;line-height:1.6;}
+.note strong{color:var(--text);}
+footer-line{display:block;font-size:12px;color:var(--muted);margin-top:32px;text-align:center;}
+</style>
+
+<div class="card">
+
+  <div class="checkmark">✅</div>
+
+  <p class="eyebrow">Payment Confirmed</p>
+  <h1>You're In. Welcome to <em>The Blueprint.</em></h1>
+  <p style="font-size:14px;color:var(--muted);margin-top:8px;">Your payment was successful. Here is what happens next.</p>
+
+  <div class="tx-box">
+    <p class="tx-label">Buyer</p>
+    <p class="tx-value" id="buyer-name">—</p>
+  </div>
+  <div class="tx-box" style="margin-top:-10px;">
+    <p class="tx-label">Transaction ID</p>
+    <p class="tx-value" id="tx-id">—</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <h3>Tap the WhatsApp button below</h3>
+        <p>It will open a pre-written message to Abdul-Akeem Smart with your name and transaction ID already filled in.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <h3>Send the message</h3>
+        <p>Just hit send — no need to type anything. Your payment details are already in the message.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <h3>Receive your PDF and course access</h3>
+        <p>Abdul-Akeem will reply with your PDF download link and interactive course password — usually within minutes.</p>
+      </div>
+    </div>
+  </div>
+
+  <a id="wa-link" href="#" class="wa-btn" target="_blank">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378L2.96 21.64l1.269-4.633a9.863 9.863 0 01-1.32-4.955C2.91 6.63 7.263 2.276 12.61 2.276c2.597 0 5.038 1.012 6.876 2.85a9.667 9.667 0 012.85 6.877c-.003 5.348-4.356 9.702-9.702 9.702"/></svg>
+    Send WhatsApp Message to Get Access
+  </a>
+
+  <p class="note">
+    Having trouble? Call or message directly:<br>
+    <strong>+234 807 175 7195</strong> · Abdul-Akeem Smart
+  </p>
+
+</div>
+
+<span footer-line>© 2026 Abdul-Akeem Smart · The Reading Blueprint</span>
+
+<script>
+// ── READ BUYER DETAILS FROM URL ──
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var name = params.get('name') || 'Valued Buyer';
+  var txid = params.get('txid') || 'N/A';
+
+  document.getElementById('buyer-name').textContent = name;
+  document.getElementById('tx-id').textContent = txid;
+
+  // ── META PIXEL: Purchase event ──
+  fbq('track', 'Purchase', {
+    value: 50000,
+    currency: 'NGN',
+    content_name: 'The Reading Blueprint',
+    transaction_id: txid
+  });
+
+  // ── BUILD WHATSAPP LINK ──
+  var msg = 'Hi Abdul-Akeem, I just paid for The Reading Blueprint. '
+    + 'My name is ' + name + ' and my transaction ID is ' + txid + '. '
+    + 'Please send my PDF and course access. Thank you.';
+  document.getElementById('wa-link').href =
+    'https://wa.me/2348071757195?text=' + encodeURIComponent(msg);
+})();
+</script>
